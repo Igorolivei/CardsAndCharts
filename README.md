@@ -10,5 +10,6 @@ You can use the built-in web server provided by the PHP since the version 5.4.0.
 
 Just execute in your terminal:
 
-``` $ php -S localhost:8000
+``` 
+$ php -S localhost:8000
 ```
