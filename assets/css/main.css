@@ -15,34 +15,30 @@
 }
 
 #charts {
-	height: 20%;
+	height: 22%;
 	box-shadow: 0 5px 20px 0 #a5a5a5;
 }
 
-.circle {
-	position: relative;
-	margin: 0 auto;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 5px 20px 0 #a5a5a5;
-    z-index: 100 !important;
-    text-align: center;
+#charts > .row, .col-5, .col-6 {
+	height: 100%;
 }
 
 .semi-circle {
 	margin: 0 auto;
-    width: 70%;
-    height: 30%;
     border-radius: 10% 10% 50% 50%;
-    background: #232323;
+    background: #303030;
     text-align: center;
-    color: white;
-    font-size: 1.5em;
+    height: 20%;
+    width: 80%;
     align-items: center;
+}
+
+.semi-circle > p {
+	font-size: 100%;
+    color: white;
 }
 
 .border-dark {
 	border-color: #a0a2a5 !important;
+	border-width: 2px !important;
 }
