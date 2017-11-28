@@ -1,0 +1,48 @@
+.vertical-center {
+    min-height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+#mainBox {
+	margin: 0 auto;
+	width: 50%;
+    box-shadow: 5px 5px 18px 2px #a5a5a5;
+}
+
+#mainBox > h4, h5 {
+	color: #4f4f4f;
+}
+
+#charts {
+	height: 20%;
+	box-shadow: 0 5px 20px 0 #a5a5a5;
+}
+
+.circle {
+	position: relative;
+	margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 5px 20px 0 #a5a5a5;
+    z-index: 100 !important;
+    text-align: center;
+}
+
+.semi-circle {
+	margin: 0 auto;
+    width: 70%;
+    height: 30%;
+    border-radius: 10% 10% 50% 50%;
+    background: #232323;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    align-items: center;
+}
+
+.border-dark {
+	border-color: #a0a2a5 !important;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>Cards and Charts</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+
+        <script type="text/javascript" src="assets/scripts/jquery-3.2.1.js"></script>
+    </head>
+    <body class="bg-light">
+        <div id="content" class="vertical-center">
+            <div class="container">
+                <div id="mainBox" class="card border">
+                    <div class="card-header bg-white border border-top-0 border-left-0 border-right-0 border-dark">
+                        <h5>Cards and Charts</h5>
+                    </div>
+                    <div class="card-block bg-light">
+                        <div class="container ">
+                            <div id="charts" class="row">
+                                <div id="chart1" class="col-5 border border-top-0 border-left-0 border-bottom-0 border-dark">
+                                </div>
+                                <div id="chart2" class="col-6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer border-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            var chart1 = Highcharts.chart('chart1', {
+                
+                chart: {
+                    type: 'solidgauge',
+                    backgroundColor: null
+                },
+
+                title: null,
+
+                pane: {
+                    center: ['50%', '70%'],
+                    size: '130%',
+                    startAngle: -90,
+                    endAngle: 90,
+                    background: {
+                        backgroundColor: '#EEE',
+                        innerRadius: '70%',
+                        outerRadius: '100%',
+                        shape: 'arc'
+                    }
+                },
+
+                tooltip: {
+                    enabled: false
+                },
+
+                yAxis: {
+                    lineWidth: 2,
+                    minorTickInterval: null,
+                    tickAmount: 2,
+                    labels: {
+                        enabled: false
+                    },
+                    min: 0,
+                    max: 3,
+                    title: {
+                        enabled: false
+                    }
+                },
+
+                plotOptions: {
+                    solidgauge: {
+                        innerRadius: '70%',
+                        dataLabels: {
+                            /*crop: false,
+                            //overflow: 'none',
+                            padding: 55,
+                            shadow: true,
+                            shape: 'circle',
+                            y: 70,
+                            backgroundColor: 'white',
+                            style: {
+                                fontWeight: 'bold'
+                            },*/
+                            useHTML: true
+                        }
+                    }
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                series: [{
+                    data: [1],
+                    dataLabels: {
+                        crop: false,
+                        overflow: 'none',
+                        padding: -60,
+                        format: '<div>'
+                                  +'<div class="circle" style="text-align:center">'
+                                       +'<span style="font-size:2em; color:black">{y}</span><br>' 
+                                       +'<span style="font-size:1em; color:silver">{y}</span><br>'
+                                       +'<div class="semi-circle">HIT 6%</div>'
+                                  +'</div>'
+                                + '</div>'
+                        /*format: '<svg height="200" width="200">'
+                              + '   <circle cx="100" cy="100" r="80" stroke="black" stroke-width="3">{y}</circle>'
+                              + '</svg> '*/
+                    }
+                }]
+
+            });
+
+            // Bring life to the dials
+            /*setInterval(function () {
+                // Speed
+                var point,
+                    newVal,
+                    inc;
+
+                if (chart1) {
+                    point = chart1.series[0].points[0];
+                    inc = Math.round((Math.random() - 0.5) * 3);
+                    newVal = point.y + inc;
+
+                    if (newVal < 0 || newVal > 3) {
+                        newVal = point.y - inc;
+                    }
+
+                    point.update(newVal);
+                }
+
+            }, 2000);*/
+
+
+            Highcharts.chart('chart2', {
+
+                chart: {
+                    type: 'line',
+                    backgroundColor: null
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                plotOptions: {
+                    line: {
+                        color: 'gray'
+                    },
+                    pointInterval: 10
+                },
+
+                title: null,
+                
+                yAxis: {
+                    title: { 
+                        enabled: false 
+                    },
+                    labels: { 
+                        enabled: false 
+                    },
+                    tickInterval: 1,
+                    startOnTick: false,
+                    endOnTick: false,
+                    allowDecimals: true
+                },
+
+                xAxis: {
+                    labels: { 
+                        enabled: false 
+                    },
+                    tickInterval: 24
+                },
+
+                legend: {
+                    enabled: false
+                },
+
+                exporting: {
+                    enabled: false
+                },
+
+                series: [{
+                    data: [2, 1, 1.5, 2, 2, 1, 1, 1.5, 2, 2, 1, 2, 2, 1, 1, 2, 1, 2, 1.5, 2, 1, 1, 2, 1, 2, 2, 1]
+                }],
+
+                responsive: {
+                    rules: [{
+                        condition: {
+                            minWidth: 250
+                        },
+                        chartOptions: {
+                          legend: {
+                            enabled: false
+                          }
+                        }
+                    }]
+                }
+
+            });
+        </script>
+    </body>
+</html>
